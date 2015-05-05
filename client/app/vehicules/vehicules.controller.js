@@ -72,6 +72,14 @@ angular.module('autoPrivilegeApp')
       return def;
     };
 
+    $scope.getSrc = function (photos) {
+      if (photos) {
+        return photos.split('|')[0];
+      } else {
+        return '../photos/noPic.png';
+      }
+    };
+
     // Show Car detail
     $scope.showCarDetail = function (_id) {
       $state.go('vehiculeDetail', {id: _id});
