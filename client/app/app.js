@@ -4,6 +4,7 @@ angular.module('autoPrivilegeApp', [
   'ngCookies',
   'ngResource',
   'ngAnimate',
+  'ngTable',
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
