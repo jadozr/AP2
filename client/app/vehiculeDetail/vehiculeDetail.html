@@ -1,6 +1,5 @@
-<div class="container vehiculeDetails">
   <!-- slider container -->
-  <div class="container slider">
+  <div class="container slider vehiculeDetails">
 
     <!-- enumerate all photos -->
     <img ng-repeat="photo in photos" class="carousel slide" ng-swipe-right="showPrev()" ng-swipe-left="showNext()" ng-show="isActive($index)" ng-src="{{photo.src}}" />
@@ -17,5 +16,4 @@
     </ul>
 
   </div>
-</div>
 
