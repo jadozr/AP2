@@ -1,0 +1,77 @@
+ #milieu {
+  width: 360px;
+  margin: auto;
+  border: 1px dashed rgba(153, 113, 113, 0.16);
+  background-color: white;
+  padding-bottom: 5px;
+}
+ .middle {
+  width: 360px;
+  margin: auto;
+  background-color: white;
+  padding-bottom: 5px;
+}
+
+ .bloc1 {
+  float: left;
+  overflow: hidden;
+  padding-top: 28px;
+  padding: 5px;
+}
+
+ .bloc2 {
+  overflow: hidden;
+  /*padding: 5px;*/
+  border1px: solid #f00;
+}
+
+  .bouton, .bouton:visited {
+  display: inline-block;
+  padding: 5px 10px 6px;
+  color: #fff;
+  text-decoration: none;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  position: relative;
+  cursor: pointer
+}
+
+.bouton:hover{
+  background-color: #111; color: #fff;
+}
+.bouton:active{
+  top: 1px;
+}
+
+ .bouton, .bouton:visited,.medium.bouton, .medium.bouton:visited{
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  float: right;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+ .bleu.bouton, .bleu.bouton:visited{
+  background-color: #2981e4;
+}
+ .bleu.bouton:hover{
+  background-color: #2575cf;
+}
+
+ #NBVehicule {
+  color: #FD9706;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  float: right;
+  clear: right;
+  margin: 7px 15px 0 0;
+  width: 250px;
+}
