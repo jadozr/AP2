@@ -5,6 +5,7 @@ angular.module('autoPrivilegeApp', [
   'ngResource',
   'ngAnimate',
   'ngTable',
+  'ngTouch',
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
