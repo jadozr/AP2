@@ -1,5 +1,6 @@
 <div class="container">
-  <div class="col-md-12">
+  <div class="row">
+    <div class="col-lg-12">
     <div id="NBVehicule">{{totalsCars}} véhicules diponibles</div>
     <table ng-table="tableParams" show-filter="true" class="table">
       <tr ng-repeat="car in $data" ng-if="$index % 3 == 0">
@@ -51,4 +52,5 @@
       </tr>
     </table>
   </div>
+</div>
 </div>
