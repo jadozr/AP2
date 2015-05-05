@@ -5,7 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/autoprivilege-dev'
+    uri: 'mongodb://localhost/AutoPrivilege'
 
   }
 };
