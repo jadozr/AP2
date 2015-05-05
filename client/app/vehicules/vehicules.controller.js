@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('autoPrivilegeApp')
-  .controller('VehiculesCtrl', function ($scope,$http, $window) {
+  .controller('VehiculesCtrl', function ($scope,$http, $state) {
     $scope.awesomeThings = [];
 
     $http.get('/api/cars').success(function (awesomeThings) {
@@ -10,6 +10,6 @@ angular.module('autoPrivilegeApp')
 
     // Show Car detail
     $scope.showCarDetail = function (_id) {
-      $window.location = '#/vehiculeDetail/';
+      $state.go('vehiculeDetail', {id: _id});
     };
   });

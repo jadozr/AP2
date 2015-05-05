@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('autoPrivilegeApp')
-  .controller('VehiculeDetailCtrl', function ($scope) {
-   // $http.get('/api/cars/' + $routeParams._id);
-    $scope.message = 'Hello';
+  .controller('VehiculeDetailCtrl', function ($scope,$stateParams,$http) {
+    $http.get('/api/cars/'+ $stateParams.id).success(function(car) {
+      $scope.message = car;
+    });
   });
