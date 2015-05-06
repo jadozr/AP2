@@ -3,9 +3,7 @@
 angular.module('autoPrivilegeApp')
   .controller('VehiculesCtrl', function ($scope, $q, $http, $state, $filter, ngTableParams) {
     var qDocs = $q.defer();
-    $http.get('/api/cars').then(function(cars){
-      qDocs.resolve(cars.data);
-
+    qDocs.resolve($http.get('/api/cars').success(function () {
       $scope.tableParams = new ngTableParams({
         page: 1,            // show first page
         count: 12           // count per page
@@ -15,8 +13,8 @@ angular.module('autoPrivilegeApp')
           qDocs.promise.then(function (result) {
             // use build-in angular filter
             var orderedData = params.sorting ?
-              $filter('orderBy')(result, params.orderBy()) :
-              result;
+              $filter('orderBy')(result.data, params.orderBy()) :
+              result.data;
             orderedData = params.filter ?
               $filter('filter')(orderedData, params.filter()) :
               orderedData;
@@ -37,54 +35,52 @@ angular.module('autoPrivilegeApp')
           });
         }
       });
+    }));
 
-      var inArray = Array.prototype.indexOf ?
-        function (val, arr) {
-          return arr.indexOf(val);
-        } :
-        function (val, arr) {
-          var i = arr.length;
-          while (i--) {
-            if (arr[i] === val) {
-              return i;
-            }
+    var inArray = Array.prototype.indexOf ?
+      function (val, arr) {
+        return arr.indexOf(val);
+      } :
+      function (val, arr) {
+        var i = arr.length;
+        while (i--) {
+          if (arr[i] === val) {
+            return i;
           }
-          return -1;
-        };
-
-      $scope.names = function (column) {
-        var def = $q.defer(),
-          arr = [],
-          names = [];
-        qDocs.promise.then(function (result) {
-          angular.forEach(result.data, function (item) {
-            if (inArray(item.Marque, arr) === -1) {
-              arr.push(item.Marque);
-              names.push({
-                'id': item.Marque,
-                'title': item.Marque
-              });
-            }
-          });
-        });
-        def.resolve(names);
-        return def;
-      };
-
-      $scope.getSrc = function (photos) {
-        if (photos) {
-          return photos.split('|')[0];
-        } else {
-          return '../photos/noPic.png';
         }
+        return -1;
       };
 
-      // Show Car detail
-      $scope.showCarDetail = function (_id) {
-        $state.go('vehiculeDetail', {id: _id});
-      };
+    $scope.names = function (column) {
+      var def = $q.defer(),
+        arr = [],
+        names = [];
+      qDocs.promise.then(function (result) {
+        angular.forEach(result.data, function (item) {
+          if (inArray(item.Marque, arr) === -1) {
+            arr.push(item.Marque);
+            names.push({
+              'id': item.Marque,
+              'title': item.Marque
+            });
+          }
+        });
+      });
+      def.resolve(names);
+      return def;
+    };
 
-    })
+    $scope.getSrc = function (photos) {
+      if (photos) {
+        return photos.split('|')[0];
+      } else {
+        return '../photos/noPic.png';
+      }
+    };
 
+    // Show Car detail
+    $scope.showCarDetail = function (_id) {
+      $state.go('vehiculeDetail', {id: _id});
+    };
 
   });
