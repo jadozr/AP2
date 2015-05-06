@@ -5,7 +5,6 @@ angular.module('autoPrivilegeApp')
     $http.get('/api/cars/'+ $stateParams.id).success(function(car) {
       $scope.message = car;
     });
-
     // Set of Photos
     $scope.photos = [
       {src: 'http://farm9.staticflickr.com/8042/7918423710_e6dd168d7c_b.jpg', desc: 'Image 01'},
