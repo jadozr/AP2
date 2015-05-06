@@ -6,7 +6,9 @@
         <table ng-table="tableParams" show-filter="true"
                class="table ng-table-rowselected ng-table-responsive table-responsive">
           <tr ng-repeat="car in $data" ng-if="$index % 3 == 0">
-            <td data-title="'Recherche par Marque'" filter="{ 'Marque': 'select' }" filter-data="names($column)"
+            <td class=".hidden-xs"  data-title="'Recherche par Marque'" filter="{ 'Marque': 'select' }" filter-data="names($column)"
+                ng-repeat="car in $data.slice($index, $index + 3)">
+            <td class=".visible-xs"  filter="{ 'Marque': 'select' }" filter-data="names($column)"
                 ng-repeat="car in $data.slice($index, $index + 3)">
               <div id="milieu">  
                 <div class="bloc1">
