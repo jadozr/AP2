@@ -18,16 +18,23 @@
   </div>
 </header>
 <div class="container">
-  <ui-gmap-google-map center='map.center' zoom='map.zoom' options='options'>
-    <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
-    </ui-gmap-marker>
-  </ui-gmap-google-map>
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
-      </ul>
+
+  <div class="row-fluid">
+    <div class="col-xs-6 col-md-4 span4 text-left">
+      <h4>Our Clients</h4>
+      <p>Hello These are our clients. <a href="#">Click here</a>.</p>
+      <a href="#" class="btn btn-primary"><i class="icon-music icon-white"></i> Our Clients</a>
+    </div>
+    <div class="col-xs-6 col-md-4 text-center">
+      <ui-gmap-google-map center='map.center' zoom='map.zoom' options='options'>
+        <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+        </ui-gmap-marker>
+      </ui-gmap-google-map>
+    </div>
+    <div class="col-xs-6 col-md-4 span4 text-right">
+      <h4>Our Clients</h4>
+      <p>Hello These are our clients. <a href="#">Click here</a>.</p>
+      <a href="#" class="btn btn-primary"><i class="icon-file icon-white"></i> Our Clients</a>
     </div>
   </div>
 </div>
