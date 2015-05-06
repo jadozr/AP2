@@ -1,54 +1,59 @@
 <div class="container">
   <div class="row">
-      <div id="NBVehicule">{{totalsCars}} véhicules diponibles</div>
-    <table ng-table="tableParams" show-filter="true" class="table ng-table-rowselected ng-table-responsive table-responsive">
-      <tr ng-repeat="car in $data" ng-if="$index % 3 == 0">
-        <td data-title="'Recherche par Marque'" filter="{ 'Marque': 'select' }" filter-data="names($column)"
-            ng-repeat="car in $data.slice($index, $index + 3)">
-          <div id="milieu">  
-            <div class="bloc1">
-              <img class=" img-rounded resize" check-image ng-src="../photos/{{ getSrc(car.Photos) }}"
-                   alt="Image">  
-            </div>
-             
-            <div class="bloc2">
-              Modèle: {{car.Famille}}<br/>Km: {{car.Kilometrage}}<br/>Prix: {{car.PrixVenteTTC}}<br/>Energie:
-              {{car.EnergieLibelle}}<br/>Garantie: {{car.GarantieLibelle}}<br/>
-              <button class="medium bouton bleu"
-                      ng-click="showCarDetail(car._id); scrollToAnchor('foo')">
-                Détails
-              </button>
-            </div>
-          </div>
-        </td>
-        <td ng-show="colonne1">
-          <div class="middle">  
-            <div class="bloc1">
-            </div>
-             
-            <div class="bloc2">
-            </div>
-          </div>
-        </td>
-        <td ng-show="colonne1">
-          <div class="middle">  
-            <div class="bloc1">
-            </div>
-             
-            <div class="bloc2">
-            </div>
-          </div>
-        </td>
-        <td ng-show="colonne2">
-          <div class="middle">  
-            <div class="bloc1">
-            </div>
-             
-            <div class="bloc2">
-            </div>
-          </div>
-        </td>
-      </tr>
-    </table>
+    <div class="col-md-12">
+      <div class="well">
+        <div id="NBVehicule">{{totalsCars}} véhicules diponibles</div>
+        <table ng-table="tableParams" show-filter="true"
+               class="table ng-table-rowselected ng-table-responsive table-responsive">
+          <tr ng-repeat="car in $data" ng-if="$index % 3 == 0">
+            <td data-title="'Recherche par Marque'" filter="{ 'Marque': 'select' }" filter-data="names($column)"
+                ng-repeat="car in $data.slice($index, $index + 3)">
+              <div id="milieu">  
+                <div class="bloc1">
+                  <img class=" img-rounded resize" check-image ng-src="../photos/{{ getSrc(car.Photos) }}"
+                       alt="Image">  
+                </div>
+                 
+                <div class="bloc2">
+                  Modèle: {{car.Famille}}<br/>Km: {{car.Kilometrage}}<br/>Prix: {{car.PrixVenteTTC}}<br/>Energie:
+                  {{car.EnergieLibelle}}<br/>Garantie: {{car.GarantieLibelle}}<br/>
+                  <button class="medium bouton bleu"
+                          ng-click="showCarDetail(car._id); scrollToAnchor('foo')">
+                    Détails
+                  </button>
+                </div>
+              </div>
+            </td>
+            <td ng-show="colonne1">
+              <div class="middle">  
+                <div class="bloc1">
+                </div>
+                 
+                <div class="bloc2">
+                </div>
+              </div>
+            </td>
+            <td ng-show="colonne1">
+              <div class="middle">  
+                <div class="bloc1">
+                </div>
+                 
+                <div class="bloc2">
+                </div>
+              </div>
+            </td>
+            <td ng-show="colonne2">
+              <div class="middle">  
+                <div class="bloc1">
+                </div>
+                 
+                <div class="bloc2">
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
 </div>

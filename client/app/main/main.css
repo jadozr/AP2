@@ -23,13 +23,23 @@
 }
 
 .angular-google-map-container {
-  height: 350px;
-  width: 350px;
+/*  height: 350px;
+  width: 350px;*/
   margin-bottom: 30px;
   border: 10px solid #fff;
   box-shadow: 0 0 5px #ccc;
-
-  position: relative;
   overflow: hidden;
   transform: translateZ(0px);
+  position: relative;
+  width: 350px;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 22.25%;
+  padding-top: 30px;
+  position: relative;
+}
+
+.carousel-control {
+  padding-top:10%;
+  width:5%;
 }
