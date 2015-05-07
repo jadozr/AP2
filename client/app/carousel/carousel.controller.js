@@ -2,7 +2,7 @@
 
 angular.module('autoPrivilegeApp')
   .controller('CarouselCtrl', function ($scope) {
-    $scope.myInterval = 50;
+    $scope.myInterval = 500;
     var slides = $scope.slides = [];
     $scope.addSlide = function() {
       var newWidth = 600 + slides.length + 1;
