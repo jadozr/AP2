@@ -1,24 +1,10 @@
 <!-- slider container -->
 <div class=" container">
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="slider" data-ride="carousel">
-        &lt;!&ndash; enumerate all photos &ndash;&gt;
-        <img ng-repeat="photo in photos" class="carousel slide" ng-swipe-right="showPrev()" ng-swipe-left="showNext()"
-             ng-show="isActive($index)" ng-src="{{photo.src}}"/>
-
-        &lt;!&ndash; prev / next controls &ndash;&gt;
-        <a class="arrow prev" href="#" ng-click="showPrev()"></a>
-        <a class="arrow next" href="#" ng-click="showNext()"></a>
-
-        &lt;!&ndash; extra navigation controls &ndash;&gt;
-        <ul class="navigation">
-          <li ng-repeat="photo in photos" ng-class="{'active':isActive($index)}">
-            <img src="{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" ng-click="showPhoto($index);"/>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <wallop-slider
+    data-images="images"
+    data-animation="rotate"
+    data-current-item-index="index"
+    data-on-previous="updateTsPrevious()"
+    data-on-next="updateTsNext()"></wallop-slider>
 </div>
 
