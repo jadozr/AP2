@@ -1,0 +1,70 @@
+#contact {
+}
+
+.contact body {
+  font-family: Helvetica, Arial;
+  font-size: 10pt;
+}
+
+.contact div {
+  margin: 0px auto;
+  width:400px;
+}
+
+.contact input {
+  width: 130px;
+}
+
+.contact input.ng-invalid.ng-dirty {
+  background-color: red;
+}
+
+/*
+Unfortunately there is no consistent implementation
+for placeholder, which is the reason for this ugliness
+*/
+.contact input.ng-invalid.ng-dirty::-webkit-input-placeholder,
+input.ng-invalid.ng-dirty::-moz-placeholder,
+input.ng-invalid.ng-dirty::-ms-input-placeholder,
+input.ng-invalid.ng-dirty {
+  color: #fff;
+}
+
+.contact .outerwrapper {
+  width: 550px;
+}
+
+.contact .formwrapper {
+  border: 1px solid #666;
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px #888888;
+  float: left;
+  margin-right: 15px;
+  padding: 4px;
+  width: 250px;
+  background: #F7F2E0;
+}
+
+.contact .label {
+  float: left;
+  font-size: .9em;
+  font-weight: bold;
+  text-align: right;
+  width: 75px;
+  margin-right: 10px;
+  line-height: 20px;
+}
+
+.contact .buttons {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.contact .submitbtn:enabled {
+  background-color: green;
+  color: white;
+}
+
+.contact .bold {
+  font-weight: bold;
+}

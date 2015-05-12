@@ -1,3 +1,62 @@
-<div class="col-md-12">
-This is the contact view.
+<div class="contact container">
+  <div class="outerwrapper" ng-app="rgValidation" ng-controller="ContactCtrl">
+    <!-- Note: There are multiple ways to present and submit a form using HTML 5
+      and AngularJS. The method used here does not perform an actual submit.
+      Instead, when the SUBMIT button is clicked it calls an update function which
+      updates a visitorInfo object. Any action can be performed when the visitorInfo
+      object is updated by modifying the update function in VisitorFormController in app.js.
+    -->
+    <div class="formwrapper">
+
+      <!--  	Form uses VisitorFormController to manage scope.
+                  novalidate prevents certain browsers from placing a red border around
+                  unfilled form fields. -->
+      <form name="valForm"
+            class="visitorInfoForm"
+            novalidate>
+
+        <!--  Each input field has been marked as required. The form will not be
+                  considered valid until all input fields have been populated. -->
+        <span class="label">First Name:</span>
+        <input name="firstName" ng-model="visitorInfo.firstName" placeholder="First Name" required/>
+        <span class="valid" ng-show="valForm.firstName.$valid">&#10004;</span><br>
+
+        <span class="label">Last Name:</span>
+        <input name="lastName" ng-model="visitorInfo.lastName" placeholder="Last Name" required>
+        <span class="valid" ng-show="valForm.lastName.$valid">&#10004;</span><br>
+
+        <span class="label">Address:</span>
+        <input name="address" ng-model="visitorInfo.address" placeholder="Address" required>
+        <span class="valid" ng-show="valForm.address.$valid">&#10004;</span><br>
+
+        <span class="label">City:</span>
+        <input name="city" ng-model="visitorInfo.city" placeholder="City" required>
+        <span class="valid" ng-show="valForm.city.$valid">&#10004;</span><br>
+
+        <span class="label">State:</span>
+        <input name="state" ng-model="visitorInfo.state" placeholder="State" required>
+        <span class="valid" ng-show="valForm.state.$valid">&#10004;</span><br>
+
+        <span class="label">Zip:</span>
+        <input name="zip" type="number" ng-model="visitorInfo.zip" placeholder="Zip" required>
+        <span class="valid" ng-show="valForm.zip.$valid">&#10004;</span><br>
+
+        <span class="label">Phone:</span>
+        <input name="phone" type="tel" ng-model="visitorInfo.phone" placeholder="Phone" required>
+        <span class="valid" ng-show="valForm.phone.$valid">&#10004;</span><br>
+
+        <span class="label">Email:</span>
+        <input name="email" type="email" ng-model="visitorInfo.email" placeholder="Email" required>
+        <span class="valid" ng-show="valForm.email.$valid">&#10004;</span><br>
+
+        <div class="buttons">
+          <!--  Submit button will be disabled if no change has been made to visitor data
+                          OR if the entered data does not pass validation -->
+          <button class="submitbtn" ng-click="update(visitorInfo)"
+                  ng-disabled="valForm.$invalid || isUnchanged(visitorInfo)">SUBMIT
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
