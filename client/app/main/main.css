@@ -62,3 +62,16 @@
   width: 276px;
   height: 276px;
 }
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+.text-muted{
+  color: #2385A1;
+  font-weight: bold;
+  font-size: 10px;
+  text-align: center;
+}
