@@ -9,11 +9,10 @@ angular.module('autoPrivilegeApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'uiGmapgoogle-maps'
-])
+  'uiGmapgoogle-maps'])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider
       .otherwise('/');
-
+    window.angular
     $locationProvider.html5Mode(true);
   });

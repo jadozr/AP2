@@ -6,9 +6,7 @@
         <table ng-table="tableParams" show-filter="true"
                class="table ng-table-rowselected ng-table-responsive table-responsive">
           <tr ng-repeat="car in $data" ng-if="$index % 3 == 0">
-            <td class=".hidden-xs"  data-title="'Recherche par Marque'" filter="{ 'Marque': 'select' }" filter-data="names($column)"
-                ng-repeat="car in $data.slice($index, $index + 3)">
-            <td class=".visible-xs"  filter="{ 'Marque': 'select' }" filter-data="names($column)"
+            <td    filter="{ 'Marque': 'select' }" filter-data="names($column)"
                 ng-repeat="car in $data.slice($index, $index + 3)">
               <div id="milieu">  
                 <div class="bloc1">
@@ -59,3 +57,39 @@
     </div>
   </div>
 </div>
+
+
+<!--
+<div class="container" style="padding: 40px;">
+  <div class="row visible-on">
+    <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+&lt;!&ndash;
+      <span class="hidden-xs">Extra small</span>
+&ndash;&gt;
+      <span class="visible-xs">✔ Visible on x-small</span>
+    </div>
+    <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+&lt;!&ndash;
+      <span class="hidden-sm">Small</span>
+&ndash;&gt;
+      <span class="visible-sm">✔ Visible on small</span>
+    </div>
+    <div class="clearfix visible-xs"></div>
+    <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+&lt;!&ndash;
+      <span class="hidden-md">Medium</span>
+&ndash;&gt;
+      <span class="visible-md">✔ Visible on medium</span>
+    </div>
+    <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+&lt;!&ndash;
+      <span class="hidden-lg">Large</span>
+&ndash;&gt;
+      <span class="visible-lg">✔ Visible on large</span>
+    </div>
+  </div>
+-->
